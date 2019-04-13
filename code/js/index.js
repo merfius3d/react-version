@@ -11,18 +11,7 @@ const store = createStore (allReducers);
 const root = document.getElementById('wrapper');
 const siteUrl = 'http://www.merfius.com/';
 
-class Menu extends React.Component {
-      render() {
-          return (
-            <div className="menu">
-              <Provider store={store}>
-                <Main />
-              </Provider>
-            </div>
-           );
-      }
-  }
-
+//root
 class Root extends React.Component {
   render() {
     return(
@@ -35,6 +24,19 @@ class Root extends React.Component {
   }
 }
 
+//main menu
+class Menu extends React.Component {
+      render() {
+          return (
+            <div className="menu">
+              <Provider store={store}>
+                <Main />
+              </Provider>
+            </div>
+           );
+      }
+  }
+//header
 class Head extends React.Component {
       render() {
           return (
@@ -52,6 +54,7 @@ class Head extends React.Component {
            );
       }
   }
+  //content
   class Content extends React.Component {
         render() {
             return (
@@ -61,6 +64,7 @@ class Head extends React.Component {
              );
         }
     }
+    //footer
   class Footer extends React.Component {
           render() {
               return (
@@ -71,4 +75,5 @@ class Head extends React.Component {
                );
           }
       }
+      
   ReactDOM.render(<Root />, root);
